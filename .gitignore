@@ -1,4 +1,4 @@
 *.DS_Store
-.vim/backups/*
-.vim/.netrwhist
+vim/backups/*
+vim/.netrwhist
 *.git
