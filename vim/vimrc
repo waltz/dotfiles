@@ -1,3 +1,24 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
+Plugin 'janko-m/vim-test'
+Plugin '907th/vim-auto-save'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'dense-analysis/ale'
+
+call vundle#end()
+
 set nocompatible
 filetype on       
 filetype indent on
@@ -16,33 +37,10 @@ set autowrite
 autocmd! GUIEnter * set vb t_vb=
 set directory=~/.vim/backups//
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'janko-m/vim-test'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-commentary'
-Plugin 'mileszs/ack.vim'
-
-call vundle#end()
-
 colorscheme gruvbox 
 set background=dark
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+let g:gitgutter_enabled = 1
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -71,9 +69,8 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_use_default_mapping = 0
 
-" Default mapping
 let g:multi_cursor_start_word_key      = '<C-n>'
 let g:multi_cursor_select_all_word_key = '<A-n>'
 let g:multi_cursor_start_key           = 'g<C-n>'
@@ -83,3 +80,21 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
+let g:auto_save = 1
+let g:auto_save_events = ["CompleteDone"] 
+
+let g:ale_linters = {
+\ 'javascript': [],
+\ 'typescript': ['tsserver'],
+\ 'typescriptreact': ['tsserver'],
+\}
+let g:ale_fixers = {
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\ 'javascript': [],
+\ 'typescript': ['tslint'],
+\ 'typescriptreact': ['tslint'],
+\}
+let g:airline#extensions#ale#enabled = 1
+
+" Highlight Fastlane as Ruby
+autocmd BufNewFile,BufRead Fastfile Matchfile Appfile Gymfile Pluginfile set syntax=ruby 
