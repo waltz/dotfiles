@@ -1,28 +1,30 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Clear all existing autocommands.
+autocmd!
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mileszs/ack.vim'
-Plugin 'janko-m/vim-test'
-Plugin '907th/vim-auto-save'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'dense-analysis/ale'
+call plug#begin()
 
-call vundle#end()
+Plug 'morhetz/gruvbox'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
+Plug 'janko-m/vim-test'
+Plug '907th/vim-auto-save'
+Plug 'vim-ruby/vim-ruby'
+Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
 
 set nocompatible
-filetype on       
-filetype indent on
-filetype plugin on 
+filetype plugin indent on
 syntax on
 set t_Co=256
 set backspace=2
@@ -34,8 +36,11 @@ set guifont=JetBrains\ Mono:h14
 set termguicolors
 set autoread
 set autowrite
+set hidden
 autocmd! GUIEnter * set vb t_vb=
 set directory=~/.vim/backups//
+set completeopt=menu,preview
+set timeout timeoutlen=1000 ttimeoutlen=100
 
 colorscheme gruvbox 
 set background=dark
@@ -81,20 +86,17 @@ let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 let g:auto_save = 1
-let g:auto_save_events = ["CompleteDone"] 
-
-let g:ale_linters = {
-\ 'javascript': [],
-\ 'typescript': ['tsserver'],
-\ 'typescriptreact': ['tsserver'],
-\}
-let g:ale_fixers = {
-\ '*': ['remove_trailing_lines', 'trim_whitespace'],
-\ 'javascript': [],
-\ 'typescript': ['tslint'],
-\ 'typescriptreact': ['tslint'],
-\}
-let g:airline#extensions#ale#enabled = 1
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 " Highlight Fastlane as Ruby
 autocmd BufNewFile,BufRead Fastfile Matchfile Appfile Gymfile Pluginfile set syntax=ruby 
+
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-tslint-plugin',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-highlight',
+  \ ]
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
