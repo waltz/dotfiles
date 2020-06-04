@@ -50,11 +50,17 @@ autocmd Filetype typescript,javascript,typescriptreact,javascriptreact setlocal 
 
 let g:gitgutter_enabled = 1
 
+" Configure CtrlP
 set runtimepath^=~/.vim/plugged/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 map <C-\> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
