@@ -45,6 +45,9 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 colorscheme gruvbox 
 set background=dark
 
+" Specific comment styles
+autocmd Filetype typescript,javascript,typescriptreact,javascriptreact setlocal commentstring=//\ %s
+
 let g:gitgutter_enabled = 1
 
 set runtimepath^=~/.vim/plugged/ctrlp.vim
