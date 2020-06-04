@@ -47,7 +47,7 @@ set background=dark
 
 let g:gitgutter_enabled = 1
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/plugged/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_cmd = 'CtrlPMixed'
