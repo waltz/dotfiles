@@ -18,3 +18,6 @@ ln -s ~/Code/dotfiles/.ignore ~/.ignore
 # OSX key repeat settings
 defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write NSGlobalDomain InitialKeyRepeat -int 0
+
+# Clear all font smoothing settings
+defaults -currentHost delete -globalDomain AppleFontSmoothing
