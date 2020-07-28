@@ -68,7 +68,7 @@ ZSH_THEME="dpoggi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm rbenv)
+plugins=(git asdf rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,9 +101,6 @@ unsetopt share_history
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 #
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 alias git=hub
 

@@ -8,6 +8,9 @@ ln -s ~/Code/dotfiles/vimrc ~/.vimrc
 mv ~/.zshrc ~/.zshrc.old
 ln -s ~/Code/dotfiles/zshrc ~/.zshrc
 
+mv ~/.asdfrc ~/.asdf.old
+ln -s ~/Code/dotfiles/asdfrc ~/.asdfrc
+
 # Setup The Silver Searcher Ignore file
 mv ~/.ignore ~/.ignore.old
 ln -s ~/Code/dotfiles/.ignore ~/.ignore
