@@ -108,6 +108,7 @@ alias git=hub
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK=$ANDROID_SDK_ROOT
+export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH="$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator:$PATH"
 
 # Use OpenJDK first
