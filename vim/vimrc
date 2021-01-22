@@ -42,6 +42,7 @@ autocmd! GUIEnter * set vb t_vb=
 set directory=~/.vim/backups//
 set completeopt=menu,preview
 set timeout timeoutlen=1000 ttimeoutlen=100
+set updatetime=100
 
 colorscheme gruvbox 
 set background=dark
