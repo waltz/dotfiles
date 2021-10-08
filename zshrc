@@ -109,3 +109,6 @@ export PATH="$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_S
 # Use OpenJDK first
 # export PATH="/usr/local/opt/openjdk/bin:$PATH"
 # export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
+# Add some Pipenv tools to the path.
+export PATH="/Users/waltz/Library/Python/3.9/bin:$PATH"
