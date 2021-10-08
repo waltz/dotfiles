@@ -1,5 +1,9 @@
-[alias]
-co = "checkout"
-br = "branch"
-ci = "commit"
-st = "status"
+# This is meant to be copied rather than symlinked. It's just here to make sure
+# I don't forget the syntax for including files in gitconfigs.
+
+[include]
+  path = ~/Code/dotfiles/gitconfig-base
+
+[user]
+	email = edit-me@example.com
+	name = CJ Bryan
