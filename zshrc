@@ -94,9 +94,6 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-#
-
 
 # Add some Pipenv tools to the path.
 export PATH="/Users/waltz/Library/Python/3.9/bin:$PATH"
