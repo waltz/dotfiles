@@ -15,7 +15,6 @@ Plug '907th/vim-auto-save'
 Plug 'vim-ruby/vim-ruby'
 Plug 'airblade/vim-gitgutter'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'fatih/vim-go'
 
 Plug 'pangloss/vim-javascript'
@@ -101,7 +100,3 @@ let g:coc_global_extensions = [
   \ ]
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Vim Markdown Preview Hotkey
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_browser='Google Chrome'
