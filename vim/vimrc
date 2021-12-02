@@ -15,6 +15,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'airblade/vim-gitgutter'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'fatih/vim-go'
+Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -81,6 +82,11 @@ nmap <silent> t<C-g> :TestVisit<CR>
 
 let g:auto_save = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+let g:better_whitespace_enabled = 1
+" Color reference: https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
+let g:better_whitespace_ctermcolor = '159' " PaleTurquoise1
+let g:better_whitespace_guicolor = '#AFFFFF'
 
 " Highlight Fastlane as Ruby
 autocmd BufNewFile,BufRead Fastfile,Matchfile,Appfile,Gymfile,Pluginfile set syntax=ruby
