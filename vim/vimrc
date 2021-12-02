@@ -3,24 +3,27 @@ autocmd!
 
 call plug#begin()
 
+" must-haves
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug '907th/vim-auto-save'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'janko-m/vim-test'
-Plug '907th/vim-auto-save'
-Plug 'vim-ruby/vim-ruby'
-Plug 'airblade/vim-gitgutter'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'fatih/vim-go'
-Plug 'ntpeters/vim-better-whitespace'
 
+" lang support
+Plug 'vim-ruby/vim-ruby'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'fatih/vim-go'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" eh maybe
+Plug 'janko-m/vim-test'
+Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
