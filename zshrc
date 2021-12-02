@@ -98,4 +98,4 @@ export EDITOR='vim'
 # Add some Pipenv tools to the path.
 export PATH="/Users/waltz/Library/Python/3.9/bin:$PATH"
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
