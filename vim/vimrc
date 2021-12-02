@@ -44,7 +44,7 @@ set completeopt=menu,preview
 set timeout timeoutlen=1000 ttimeoutlen=100
 set updatetime=100
 
-colorscheme gruvbox 
+colorscheme gruvbox
 set background=dark
 
 " Specific comment styles
