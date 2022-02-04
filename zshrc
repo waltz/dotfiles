@@ -104,3 +104,5 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+source ~/.zshrc_local
