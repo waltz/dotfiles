@@ -68,7 +68,7 @@ ZSH_THEME="dpoggi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf rbenv gcloud)
+plugins=(git rbenv bundler gcloud)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,3 +99,5 @@ export EDITOR='vim'
 export PATH="/Users/waltz/Library/Python/3.9/bin:$PATH"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+. /usr/local/opt/asdf/libexec/asdf.sh
