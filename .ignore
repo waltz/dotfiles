@@ -1,5 +1,3 @@
-# Tell The Silver Searcher to ignore things.
-# https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
 *.tags
 *DS_Store
 .git
