@@ -98,6 +98,9 @@ export EDITOR='vim'
 # Add some Pipenv tools to the path.
 export PATH="/Users/waltz/Library/Python/3.9/bin:$PATH"
 
+# locate homebrew sbin
+export PATH="/usr/local/sbin:$PATH"
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
 # Disable fork safety so that Rails Spring boot works.
