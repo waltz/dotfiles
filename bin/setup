@@ -11,9 +11,18 @@ ln -s ~/Code/dotfiles/zshrc ~/.zshrc
 mv ~/.asdfrc ~/.asdf.old
 ln -s ~/Code/dotfiles/asdfrc ~/.asdfrc
 
+if ! [ -s ~/.gitconfig ]; then
+	ln -s ~/Code/dotfiles/gitconfig ~/.gitconfig
+fi
+
 # Setup The Silver Searcher Ignore file
 mv ~/.ignore ~/.ignore.old
 ln -s ~/Code/dotfiles/.ignore ~/.ignore
+
+if ! [[ "$OSTYPE" == "darwin"* ]]; then
+	echo "Skipping OSX-specific setup"
+	exit 0
+fi
 
 # OSX key repeat settings
 defaults write NSGlobalDomain KeyRepeat -int 2
