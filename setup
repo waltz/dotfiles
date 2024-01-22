@@ -2,6 +2,9 @@
 
 # Set up my OSX machine how I like it.
 
+mv ~/Brewfile ~/.Brewfile.old
+ln -s ~/Code/dotfiles/Brewfile ~/Brewfile
+
 mv ~/.vimrc ~/.vimrc.old
 ln -s ~/Code/dotfiles/vimrc ~/.vimrc
 
@@ -10,6 +13,14 @@ ln -s ~/Code/dotfiles/zshrc ~/.zshrc
 
 mv ~/.asdfrc ~/.asdf.old
 ln -s ~/Code/dotfiles/asdfrc ~/.asdfrc
+
+mv ~/.tool-versions ~/.tool-versions.old
+ln -s ~/Code/dotfiles/tool-versions ~/.tool-versions
+
+# Install asdf plugins
+asdf plugin add ruby
+asdf plugin add nodejs
+asdf plugin add rust
 
 if ! [ -s ~/.gitconfig ]; then
 	ln -s ~/Code/dotfiles/gitconfig ~/.gitconfig
