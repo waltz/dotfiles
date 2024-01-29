@@ -15,6 +15,7 @@ cask "docker"
 cask "steermouse"
 cask "pocket-casts"
 cask "1Password"
+cask "sequel-ace"
 
 cask "rowanj-gitx"
 cask "rectangle"
