@@ -23,7 +23,7 @@ asdf plugin add nodejs
 asdf plugin add rust
 
 if ! [ -s ~/.gitconfig ]; then
-	ln -s ~/Code/dotfiles/gitconfig ~/.gitconfig
+    ln -s ~/Code/dotfiles/gitconfig ~/.gitconfig
 fi
 
 # Setup The Silver Searcher Ignore file
@@ -31,8 +31,8 @@ mv ~/.ignore ~/.ignore.old
 ln -s ~/Code/dotfiles/.ignore ~/.ignore
 
 if ! [[ "$OSTYPE" == "darwin"* ]]; then
-	echo "Skipping OSX-specific setup"
-	exit 0
+    echo "Skipping OSX-specific setup"
+    exit 0
 fi
 
 # OSX key repeat settings

@@ -2,8 +2,8 @@
 # I don't forget the syntax for including files in gitconfigs.
 
 [include]
-  path = ~/Code/dotfiles/gitconfig-base
+    path = ~/Code/dotfiles/gitconfig-base
 
 [user]
-	email = edit-me@example.com
-	name = CJ Bryan
+    email = cbryan@onemedical.com
+    name = CJ Bryan
