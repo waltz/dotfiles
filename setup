@@ -8,6 +8,21 @@ ln -s ~/Code/dotfiles/Brewfile ~/Brewfile
 mv ~/.vimrc ~/.vimrc.old
 ln -s ~/Code/dotfiles/vimrc ~/.vimrc
 
+if ! [ -s ~/.config ]; then
+	echo "creating config dir"
+	mkdir -p ~/.config
+fi
+
+if ! [ -s ~/.config/nvim ]; then
+	echo "creating nvim dir"
+	mkdir -p ~/.config/nvim
+fi
+
+if ! [ -s ~/.config/nvim/init.lua ]; then
+	echo "aliasing nvim init"
+	ln -s ~/Code/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+fi
+
 mv ~/.zshrc ~/.zshrc.old
 ln -s ~/Code/dotfiles/zshrc ~/.zshrc
 
