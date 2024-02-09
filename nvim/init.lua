@@ -22,7 +22,8 @@ require("lazy").setup({
   { "hrsh7th/nvim-cmp" },
   { "airblade/vim-gitgutter" },
   { "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { 'nvim-lua/plenary.nvim' } },
-  { "nvim-treesitter/nvim-treesitter" },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "numToStr/Comment.nvim", lazy = false },
 })
 
 vim.cmd([[colorscheme everforest]])
@@ -57,6 +58,30 @@ cmp.setup({
     { name = 'path' },
   })
 })
+
+require("nvim-treesitter.configs").setup({
+  ensure_installed = {
+    "lua", "vim", "javascript", "typescript", "html",
+    "css", "dockerfile", "ruby", "go", "rust"
+  },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  indent = { enable = true },
+})
+
+require("Comment").setup()
+
+
+local o = vim.o
+
+o.expandtab = true
+o.smartindent = true
+o.tabstop = 2
+o.shiftwidth = 2
 
 vim.opt.number = true
 
