@@ -108,4 +108,5 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 # Disable fork safety so that Rails Spring boot works.
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 
+# Load local overrides
 source ~/.zshrc_local
