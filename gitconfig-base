@@ -5,4 +5,10 @@
   st = "status"
 
 [pager]
-  branch = false
+  branch = true 
+
+[init]
+  defaultBranch = main
+
+[branch]
+  sort = -committerdate
