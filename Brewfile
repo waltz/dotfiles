@@ -8,6 +8,7 @@ brew "ripgrep"
 brew "fzf"
 brew "asdf"
 brew "awscli"
+brew "jq"
 
 cask "google-chrome"
 cask "firefox"
