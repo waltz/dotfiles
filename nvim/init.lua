@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "neanias/everforest-nvim", version = false, lazy = false, priority = 1000, },
+  { "sainnhe/everforest" },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "neovim/nvim-lspconfig" },
@@ -26,7 +26,7 @@ require("lazy").setup({
   { "numToStr/Comment.nvim", lazy = false },
 })
 
-vim.cmd([[colorscheme everforest]])
+vim.cmd [[colorscheme everforest]]
 
 require('mason').setup()
 require('mason-lspconfig').setup({
