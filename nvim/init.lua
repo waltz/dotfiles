@@ -1,3 +1,13 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+
+vim.opt.number = true
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -26,14 +36,14 @@ require("lazy").setup({
   { "numToStr/Comment.nvim", lazy = false },
 })
 
-vim.cmd [[colorscheme everforest]]
+vim.cmd('colorscheme everforest')
 
 require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver',
     'rust_analyzer',
-    'ruby_ls',
+    'ruby_lsp',
     'rubocop',
   }
 })
@@ -61,8 +71,16 @@ cmp.setup({
 
 require("nvim-treesitter.configs").setup({
   ensure_installed = {
-    "lua", "vim", "javascript", "typescript", "html",
-    "css", "dockerfile", "ruby", "go", "rust"
+    "lua",
+    "vim",
+    "javascript",
+    "typescript",
+    "html",
+    "css",
+    "dockerfile",
+    "ruby",
+    "go",
+    "rust",
   },
   sync_install = false,
   auto_install = true,
@@ -74,16 +92,6 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("Comment").setup()
-
-
-local o = vim.o
-
-o.expandtab = true
-o.smartindent = true
-o.tabstop = 2
-o.shiftwidth = 2
-
-vim.opt.number = true
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
