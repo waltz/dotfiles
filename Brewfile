@@ -17,6 +17,7 @@ cask "steermouse"
 cask "pocket-casts"
 cask "1Password"
 cask "sequel-ace"
+cask "utcclock"
 
 cask "rowanj-gitx"
 cask "rectangle"

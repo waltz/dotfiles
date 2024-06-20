@@ -7,3 +7,6 @@
 [user]
     email = cbryan@onemedical.com
     name = CJ Bryan
+
+[includeIf "gitdir:~/Code/amazon/"]
+    path = ~/Code/amazon/.gitconfig

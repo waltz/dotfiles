@@ -110,3 +110,5 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 
 # Load local overrides
 source ~/.zshrc_local
+
+export PATH=$PATH:/Users/chribrye/.toolbox/bin
