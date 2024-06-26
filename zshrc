@@ -68,7 +68,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast asdf rbenv bundler)
+plugins=(git gitfast asdf rbenv bundler iterm2)
 
 source $ZSH/oh-my-zsh.sh
 
