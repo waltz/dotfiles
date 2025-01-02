@@ -10,3 +10,7 @@
 
 [includeIf "gitdir:~/Code/amazon/"]
     path = ~/Code/amazon/.gitconfig
+
+[core]
+    excludesFile = ~/.ignore
+

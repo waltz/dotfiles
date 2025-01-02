@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/${USER}/.oh-my-zsh"
 
+export ZSH_THEME_CLOUD_PREFIX=""
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -108,7 +110,13 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 # Disable fork safety so that Rails Spring boot works.
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 
+# If there's a current bin dir in my home, then search it for
+# stuff to run.
+export PATH="$HOME/bin:$PATH"
+
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+alias resetmouse='printf '"'"'\e[?1000l'"'"
+
 # Load local overrides
 source ~/.zshrc_local
-
-export PATH=$PATH:/Users/chribrye/.toolbox/bin
