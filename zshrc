@@ -20,13 +20,16 @@ add-zsh-hook chpwd update_vcs_info
 
 PROMPT='%F{magenta}%2~ ${vcs_info_msg_0_}%F{white}#%  %f'
 
-export LSCOLORS="ExGxFxdaCxDaDahbadacec"
-
 # Don't share command history across shell instances.
 unsetopt share_history
 
 # Ignore duplicate commands in the history.
 setopt HIST_IGNORE_DUPS
+
+# export LSCOLORS="GxFxCxDxBxegedabagaced"
+export LSCOLORS="ExGxFxdaCxDaDahbadacec"
+
+export CLICOLOR=1
 
 # LS aliases
 alias ls="ls --color"
@@ -40,6 +43,7 @@ alias gci="git commit"
 alias vim="nvim"
 export EDITOR="nvim"
 
+# Load up asdf
 . "$HOME/.asdf/asdf.sh"
 
 # Add some Pipenv tools to the path.
@@ -57,9 +61,23 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 # stuff to run.
 export PATH="$HOME/bin:$PATH"
 
+alias resetmouse='printf '"'"'\e[?1000l'"'"
+
+# Point $JAVA_HOME where asdf has it installed.
 . ~/.asdf/plugins/java/set-java-home.zsh
 
-alias resetmouse='printf '"'"'\e[?1000l'"'"
+# Set the current $GO_HOME, etc.
+ . ~/.asdf/plugins/golang/set-env.zsh
+
+# Explicitly support go modules
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
+# Actually add the go path to the path.
+export PATH="$GOPATH:$PATH"
+
+# Git aliases
+alias gst="git status"
+alias gci="git commit"
 
 # Load local overrides
 source ~/.zshrc_local

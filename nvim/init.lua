@@ -34,6 +34,7 @@ require("lazy").setup({
   { "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { 'nvim-lua/plenary.nvim' } },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "numToStr/Comment.nvim", lazy = false },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 })
 
 vim.cmd('colorscheme everforest')
@@ -81,6 +82,7 @@ require("nvim-treesitter.configs").setup({
     "ruby",
     "go",
     "rust",
+    "yaml",
   },
   sync_install = false,
   auto_install = true,
@@ -98,3 +100,6 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- load the telescope fzf plugin
+require('telescope').load_extension('fzf')
