@@ -7,9 +7,9 @@ autoload -Uz add-zsh-hook
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr " %F{orange}●"
-zstyle ':vcs_info:git:*' unstagedstr " %F{limegreen}●"
-zstyle ':vcs_info:git:*' formats "%F{yellow}[%b]%u%c "
+zstyle ':vcs_info:git:*' stagedstr " %F{121}●"
+zstyle ':vcs_info:git:*' unstagedstr " %F{198}●"
+zstyle ':vcs_info:git:*' formats "%F{215}[%b]%c%u "
 
 function update_vcs_info() {
     vcs_info
@@ -18,7 +18,7 @@ function update_vcs_info() {
 add-zsh-hook precmd update_vcs_info
 add-zsh-hook chpwd update_vcs_info
 
-PROMPT='%F{magenta}%2~ ${vcs_info_msg_0_}%F{white}#%  %f'
+PROMPT='%B%F{205}%2~ ${vcs_info_msg_0_}%F{white}#%  %f%b'
 
 # Don't share command history across shell instances.
 unsetopt share_history
