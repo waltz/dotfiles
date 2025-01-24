@@ -63,11 +63,20 @@ export PATH="$HOME/bin:$PATH"
 
 alias resetmouse='printf '"'"'\e[?1000l'"'"
 
+has_asdf_plugin() {
+  asdf plugin list 2>/dev/null | grep -q "^$1\$"
+  return $?
+}
+
 # Point $JAVA_HOME where asdf has it installed.
-. ~/.asdf/plugins/java/set-java-home.zsh
+if has_asdf_plugin "java"; then
+  . ~/.asdf/plugins/java/set-java-home.zsh
+fi
 
 # Set the current $GO_HOME, etc.
- . ~/.asdf/plugins/golang/set-env.zsh
+if has_asdf_plugin "golang"; then
+  . ~/.asdf/plugins/golang/set-env.zsh
+fi
 
 # Explicitly support go modules
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
