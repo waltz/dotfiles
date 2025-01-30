@@ -18,7 +18,7 @@ function update_vcs_info() {
 add-zsh-hook precmd update_vcs_info
 add-zsh-hook chpwd update_vcs_info
 
-PROMPT='%B%F{205}%2~ ${vcs_info_msg_0_}%F{white}#%  %f%b'
+PROMPT='%B%F{205}%2~ ${vcs_info_msg_0_}%F{white}%#  %f%b'
 
 # Don't share command history across shell instances.
 unsetopt share_history
