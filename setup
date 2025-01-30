@@ -26,6 +26,9 @@ fi
 mv ~/.zshrc ~/.zshrc.old
 ln -s ~/Code/dotfiles/zshrc ~/.zshrc
 
+mv ~/.tmux.conf ~/.tmux.conf.old
+ln -s ~/Code/dotfiles/tmux.conf ~/.tmux.conf
+
 mv ~/.asdfrc ~/.asdf.old
 ln -s ~/Code/dotfiles/asdfrc ~/.asdfrc
 
