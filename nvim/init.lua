@@ -105,3 +105,16 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- load the telescope fzf plugin
 require('telescope').load_extension('fzf')
+
+-- show explorer on the left
+vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
+
+-- Show current file in explorer (leader + f)
+vim.keymap.set('n', '<leader>f', ':Lexplore %:p:h<CR>')
+
+-- netrw settings
+vim.g.netrw_banner = 0             -- Hide banner
+vim.g.netrw_liststyle = 3            -- Tree-style listing
+vim.g.netrw_browse_split = 4    -- Open file in vertical split
+vim.g.netrw_altv = 1                  -- Split to the right
+vim.g.netrw_winsize = 16
