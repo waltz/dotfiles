@@ -8,6 +8,8 @@ vim.o.shiftwidth = 2
 
 vim.opt.number = true
 
+vim.opt.listchars = { space = '·', tab = '>–' }
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -42,7 +44,7 @@ vim.cmd('colorscheme everforest')
 require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'tsserver',
+    'ts_ls',
     'rust_analyzer',
     'ruby_lsp',
     'rubocop',
