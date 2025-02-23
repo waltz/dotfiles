@@ -39,6 +39,7 @@ ln -s ~/Code/dotfiles/tool-versions ~/.tool-versions
 asdf plugin add ruby
 asdf plugin add nodejs
 asdf plugin add rust
+asdf plugin add golang
 
 if ! [ -s ~/.gitconfig ]; then
     ln -s ~/Code/dotfiles/gitconfig ~/.gitconfig
