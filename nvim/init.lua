@@ -9,6 +9,7 @@ vim.o.shiftwidth = 2
 vim.opt.number = true
 
 vim.opt.listchars = { space = '·', tab = '>–' }
+vim.opt.list = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -45,6 +46,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     'ts_ls',
+    'eslint',
     'rust_analyzer',
     'ruby_lsp',
     'rubocop',
@@ -113,8 +115,14 @@ vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
 vim.keymap.set('n', '<leader>f', ':Lexplore %:p:h<CR>')
 
 -- netrw settings
-vim.g.netrw_banner = 0             -- Hide banner
-vim.g.netrw_liststyle = 3            -- Tree-style listing
-vim.g.netrw_browse_split = 4    -- Open file in vertical split
-vim.g.netrw_altv = 1                  -- Split to the right
+vim.g.netrw_banner = 0       -- Hide banner
+vim.g.netrw_liststyle = 3    -- Tree-style listing
+vim.g.netrw_browse_split = 4 -- Open file in vertical split
+vim.g.netrw_altv = 1         -- Split to the right
 vim.g.netrw_winsize = 16
+
+-- Remove trailing whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  command = [[%s/\s\+$//e]],
+})
