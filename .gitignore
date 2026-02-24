@@ -3,3 +3,4 @@ vim/backups/*
 vim/.netrwhist
 *.git
 vim/plugged/
+gitconfig
