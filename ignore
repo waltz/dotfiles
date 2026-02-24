@@ -1,0 +1,30 @@
+brazil-pkg-cache/
+
+# Bemol crud
+.classpath
+.factorypath
+.settings
+.project
+
+# Dunno what this is
+*.args
+
+# No zed files
+.zed
+
+# Some llm stuff?
+.llm
+
+.smithy-project.json
+
+bin/main/META-INF
+
+bin/generated
+bin/generated-sources
+bin/main/*
+bin/default
+
+# IntelliJ IDEA workspace config
+*.iml
+
+.tool-versions
