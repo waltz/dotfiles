@@ -3,3 +3,4 @@ nodejs 20.16.0
 java corretto-8.422.05.1
 golang 1.24.0
 rust 1.85.0
+python 3.13.3
