@@ -1,5 +1,3 @@
-setopt prompt_subst
-
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz vcs_info
@@ -18,6 +16,7 @@ function update_vcs_info() {
 add-zsh-hook precmd update_vcs_info
 add-zsh-hook chpwd update_vcs_info
 
+setopt prompt_subst
 PROMPT='%B%F{205}%2~ ${vcs_info_msg_0_}%F{white}%# %f%b'
 
 # Don't share command history across shell instances.
@@ -43,14 +42,17 @@ alias gci="git commit"
 alias vim="nvim"
 export EDITOR="nvim"
 
-# Load up asdf
-. "$HOME/.asdf/asdf.sh"
-
 # Add some Pipenv tools to the path.
 export PATH="/Users/waltz/Library/Python/3.9/bin:$PATH"
 
 # locate homebrew sbin
 export PATH="/usr/local/sbin:$PATH"
+
+# make sure homebrew is in the path
+export PATH="/opt/homebrew/bin:$PATH"
+
+# Load up asdf
+. "$HOME/.asdf/asdf.sh"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
