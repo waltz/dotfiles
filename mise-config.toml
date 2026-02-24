@@ -1,0 +1,2 @@
+[settings]
+disable_tools = ["amazon-ecr-credential-helper", "cmake", "docker-compose", "imagemagick", "mysql", "redis"]
