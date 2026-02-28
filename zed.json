@@ -1,4 +1,19 @@
 {
+  "agent_servers": {
+    "Claude Code": {
+      "command": "npx",
+      "args": ["acp-claude-code"],
+      "env": {}
+    }
+  },
+  "agent": {
+    "always_allow_tool_actions": true,
+    "model_parameters": [],
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
+    }
+  },
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "show_whitespaces": "all",
@@ -9,15 +24,18 @@
     }
   },
   "theme": {
-    "mode": "system",
-    "light": "0x96f Theme",
-    "dark": "0x96f Theme"
+    "mode": "light",
+    "light": "Ayu Mirage",
+    "dark": "Sublime Mariana"
   },
   "auto_install_extensions": {
     "html": true,
     "catpuccin": true,
     "ruby": true,
-    "Quill Theme": true,
-    "0x96f": true
+    "0x96f": true,
+    "sublime-mariana-theme": true
+  },
+  "edit_predictions": {
+    "mode": "subtle"
   }
 }
