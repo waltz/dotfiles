@@ -54,6 +54,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Load up asdf
 . "$HOME/.asdf/asdf.sh"
 
+# Don't wait to fetch all the updates every time we brew install something.
+export HOMEBREW_NO_AUTO_UPDATE="true"
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
 # Disable fork safety so that Rails Spring boot works.
@@ -64,21 +67,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 export PATH="$HOME/bin:$PATH"
 
 alias resetmouse='printf '"'"'\e[?1000l'"'"
-
-has_asdf_plugin() {
-  asdf plugin list 2>/dev/null | grep -q "^$1\$"
-  return $?
-}
-
-# Point $JAVA_HOME where asdf has it installed.
-if has_asdf_plugin "java"; then
-  . ~/.asdf/plugins/java/set-java-home.zsh
-fi
-
-# Set the current $GO_HOME, etc.
-if has_asdf_plugin "golang"; then
-  . ~/.asdf/plugins/golang/set-env.zsh
-fi
 
 # Explicitly support go modules
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
