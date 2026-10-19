@@ -1,0 +1,78 @@
+[user]
+    name = CJ Bryan
+
+[alias]
+    co = checkout
+    cob = checkout -b
+    ci = commit
+    cm = commit -m
+    ca = commit --amend
+    can = commit --amend --no-edit
+    st = status -sb
+    br = branch
+    bra = branch -a
+    brd = branch -d
+    brD = branch -D
+    df = diff
+    dfs = diff --staged
+    dfw = diff --word-diff
+    lg = log --oneline --graph --decorate -20
+    lga = log --oneline --graph --decorate --all
+    ll = log --pretty=format:'%C(yellow)%h%Creset %s %C(green)(%cr)%Creset %C(blue)<%an>%Creset' -20
+    cp = cherry-pick
+    cpc = cherry-pick --continue
+    rb = rebase
+    rbi = rebase -i
+    rbc = rebase --continue
+    rba = rebase --abort
+    sta = stash
+    stp = stash pop
+    stl = stash list
+    std = stash drop
+    sts = stash show -p
+    unstage = reset HEAD --
+    undo = reset --soft HEAD~1
+    wip = !git add -A && git commit -m 'WIP'
+    aliases = config --get-regexp ^alias\\.
+
+[pager]
+    branch = true
+
+[core]
+    pager = less -FRX
+    excludesFile = ~/.ignore
+
+[init]
+    defaultBranch = main
+
+[branch]
+    sort = -committerdate
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[pull]
+    rebase = true
+
+[rerere]
+    enabled = true
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[credential "https://github.com"]
+    helper =
+    helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+    helper =
+    helper = !gh auth git-credential
+
+# Machine-specific settings, such as user.email. Keep this last so it can
+# override anything above.
+[include]
+    path = ~/.config/git/local

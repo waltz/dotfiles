@@ -74,26 +74,30 @@ alias gci="git commit"
 alias vim="nvim"
 export EDITOR="nvim"
 
-# Add some Pipenv tools to the path.
-export PATH="/Users/waltz/Library/Python/3.9/bin:$PATH"
+if [[ $OSTYPE == darwin* ]]; then
+  # Add some Pipenv tools to the path.
+  export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
-# locate homebrew sbin
-export PATH="/usr/local/sbin:$PATH"
+  # locate homebrew sbin
+  export PATH="/usr/local/sbin:$PATH"
 
-# make sure homebrew is in the path
-export PATH="/opt/homebrew/bin:$PATH"
+  # make sure homebrew is in the path
+  export PATH="/opt/homebrew/bin:$PATH"
 
-# Don't wait to fetch all the updates every time we brew install something.
-export HOMEBREW_NO_AUTO_UPDATE="true"
+  # Disable fork safety so that Rails Spring boot works.
+  export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
+
+  # Don't wait to fetch all the updates every time we brew install something.
+  export HOMEBREW_NO_AUTO_UPDATE="true"
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # Mise autocomplete
 # Regenerate this by running `mise completion zsh > ~/.local/share/mise/completions.zsh`
-source ~/.local/share/mise/completions.zsh
+[[ -f ~/.local/share/mise/completions.zsh ]] && source ~/.local/share/mise/completions.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
-
-# Disable fork safety so that Rails Spring boot works.
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 
 # If there's a current bin dir in my home, then search it for
 # stuff to run.
@@ -102,20 +106,19 @@ export PATH="$HOME/bin:$PATH"
 alias resetmouse='printf '"'"'\e[?1000l'"'"
 
 # Actually add the go path to the path.
-[ -n "$GOPATH" ] && export PATH="$GOPATH:$PATH"
-
-# More path junk
-export PATH="$HOME/.local/bin:$PATH"
+[[ -n $GOPATH ]] && export PATH="$GOPATH:$PATH"
 
 # Activate mise last so its tool paths come first in PATH.
-eval "$($HOME/.local/bin/mise activate zsh)"
-
-# Git aliases
-alias gst="git status"
-alias gci="git commit"
+if (( $+commands[mise] )); then
+  eval "$(mise activate zsh)"
+fi
 
 # Load local overrides
-source ~/.zshrc_local
+[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
+for f in ~/.config/zsh/local.d/*.zsh(N); do
+  source "$f"
+done
+unset f
 
 # Report current directory to terminal via OSC 7 (enables Ghostty/iTerm2/etc to open new tabs in same directory)
 precmd() {

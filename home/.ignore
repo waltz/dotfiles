@@ -1,0 +1,16 @@
+# Dunno what this is
+*.args
+
+# No zed files
+.zed
+
+# Some llm stuff?
+.llm
+
+# IntelliJ IDEA workspace config
+*.iml
+
+.tool-versions
+
+# Claude Code local settings
+**/.claude/settings.local.json

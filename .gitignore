@@ -1,6 +1,6 @@
 *.DS_Store
-vim/backups/*
-vim/.netrwhist
-*.git
-vim/plugged/
-gitconfig
+home/.vim/backups/*
+!home/.vim/backups/.gitkeep
+home/.vim/plugged/*
+!home/.vim/plugged/.gitkeep
+home/.vim/.netrwhist
