@@ -74,6 +74,12 @@ alias gci="git commit"
 alias vim="nvim"
 export EDITOR="nvim"
 
+# Use emacs keybindings. Without this, zsh picks vi mode because EDITOR is nvim.
+bindkey -e
+bindkey '\e[H' beginning-of-line    # Cmd-Left / Home
+bindkey '\e[F' end-of-line          # Cmd-Right / End
+bindkey '\e[3~' delete-char         # Delete
+
 if [[ $OSTYPE == darwin* ]]; then
   # Add some Pipenv tools to the path.
   export PATH="$HOME/Library/Python/3.9/bin:$PATH"
