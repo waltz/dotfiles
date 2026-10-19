@@ -30,17 +30,20 @@ function _vcs_async_worker() {
 
 function _vcs_async_callback() {
   local fd=$1
-  {
-    read -r -u $fd _vcs_info_cache
-    zle && zle reset-prompt
-  } always {
-    exec {fd}<&-
-    _vcs_async_fd=""
-  }
+  # Unregister before closing, or zle keeps calling this for the dead fd.
+  zle -F $fd
+  _vcs_info_cache=""
+  read -r -u $fd _vcs_info_cache 2>/dev/null
+  exec {fd}<&-
+  [[ $_vcs_async_fd == $fd ]] && _vcs_async_fd=""
+  zle && zle reset-prompt
 }
 
 function _vcs_async_start() {
-  [[ -n "$_vcs_async_fd" ]] && exec {_vcs_async_fd}<&-
+  if [[ -n "$_vcs_async_fd" ]]; then
+    zle -F $_vcs_async_fd
+    exec {_vcs_async_fd}<&-
+  fi
   exec {_vcs_async_fd}< <(_vcs_async_worker "$PWD")
   zle -F $_vcs_async_fd _vcs_async_callback
 }
