@@ -51,9 +51,6 @@ export PATH="/usr/local/sbin:$PATH"
 # make sure homebrew is in the path
 export PATH="/opt/homebrew/bin:$PATH"
 
-# Load up asdf
-. "$HOME/.asdf/asdf.sh"
-
 # Don't wait to fetch all the updates every time we brew install something.
 export HOMEBREW_NO_AUTO_UPDATE="true"
 
@@ -72,7 +69,13 @@ alias resetmouse='printf '"'"'\e[?1000l'"'"
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 # Actually add the go path to the path.
-export PATH="$GOPATH:$PATH"
+[ -n "$GOPATH" ] && export PATH="$GOPATH:$PATH"
+
+# More path junk
+export PATH="$HOME/.local/bin:$PATH"
+
+# Activate mise last so its tool paths come first in PATH.
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 # Git aliases
 alias gst="git status"
