@@ -2,3 +2,7 @@ font-family = "JetBrains Mono"
 font-size = 14
 theme = Dracula
 keybind = shift+enter=text:\n
+working-directory = home
+window-inherit-working-directory = false
+
+confirm-close-surface = false
