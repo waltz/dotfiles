@@ -60,6 +60,13 @@ unsetopt share_history
 # Ignore duplicate commands in the history.
 setopt HIST_IGNORE_DUPS
 
+# Persist about a day of history; write each command immediately.
+HISTFILE=~/.local/state/zsh/history
+[[ -d ${HISTFILE:h} ]] || mkdir -p ${HISTFILE:h}
+HISTSIZE=2000
+SAVEHIST=2000
+setopt INC_APPEND_HISTORY HIST_IGNORE_SPACE
+
 # export LSCOLORS="GxFxCxDxBxegedabagaced"
 export LSCOLORS="ExGxFxdaCxDaDahbadacec"
 
